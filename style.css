@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: linear-gradient(180deg, #056cd463, #ffffff);
+    height: 100vh;
+    width: 100vw;
+}
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.nav {
+    position: fixed;
+    display: fixed !important;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+    width: 100px;   
+    margin: 0;
+}
+.nav > button {
+    display: flex;
+    align-items: center; /* Vertically centers items */
+    justify-content: center; /* Horizontally centers */
+    height: 30px; /* Example height */
+    padding: 0; /* Reset padding if needed */
+    width: 70px;
+    cursor: pointer;
+    margin: 0 0 10px 0;
+    background-color: transparent;
+    color: black;
+    border: none;
+    
+    border-radius: 5px;
+}
