@@ -1,3 +1,2 @@
 # Portfolio
-- link to site
-- Dbaird2.github.io
+- Site is used with [GitHub Pages](https://dbaird2.github.io/Portfolio/)
