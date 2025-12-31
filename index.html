@@ -1,24 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
     <div class="header">
-        <h1>Welcome!</h1>
-        <p >Dason Baird's portfolio</p>
+      <h1>Welcome!</h1>
     </div>
     <div class="nav">
-        <button id="top">Top</button>
-        <button id="edu">Education</button>
-        <button id="proj">Projects</button>
-        <button id="exp">Experience</button>
-        <button id="contact">Contact</button>
+      <a href='#top-card' id="top">Top</a>
+      <a href='#edu-card' id="edu">Education</a>
+      <a href='#proj-card' id="proj">Projects</a>
+      <a href='#exp-card' id="exp">Experience</a>
+      <a href='#contact-card' id="contact">Contact</a>
     </div>
-
+    <section class="all-info">
+      <div class="card" id="top-card">
+        <p>Hello my name is Dason. I am a recent graduate looking for work.</p>
+      </div>
+      <div class="card" id="edu-card">
+        <h3>Education</h3>
+        <div class="sub">
+          <div class="sub-head">
+            <h4><span class="gold-color">Overall Education Summary</span></h4>
+            <p>GPA: 3.67</p>
+          </div>
+        </div>
+        <div class="sub">
+          <div class="sub-head">
+            <h4>
+              <span class="gold-color"
+                >B.S. in Computer Science from California State University
+                Bakersfield, 2025</span
+              >
+            </h4>
+          </div>
+          <div class="sub-content">
+            <ul>
+              <li><span class="blue-color">GPA:</span> 3.89</li>
+              <li>
+                <span class="blue-color">Dean's List:</span> <br />Spring 2024,
+                Fall 2024, Spring 2025, Fall 2025
+              </li>
+              <li>
+                <span class="blue-color">Relevant Coursework:</span>
+                <ul>
+                  <li>Algorithm Analysis</li>
+                  <li>Database Systems (PHP, MariaDB)</li>
+                  <li>Operating Systems (C)</li>
+                  <li>Software Engineering (C++)</li>
+                  <li>Computer Networks (Wireshark)</li>
+                  <li>Distributed & Parallel Computation (C, C++, OpenMP)</li>
+                  <li>
+                    Networks & Computer Security (Crytpgraphy, Kali Linux)
+                  </li>
+                  <li>Theory of Computation (Automata, Turing Machines)</li>
+                  <li>Programming Languages(PERL, Fortran, ADA, ML, Python)</li>
+                  <li>Artificial Intelligence</li>
+                  <li>Probability Theory</li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sub">
+          <div class="sub-head">
+            <h4>
+              <span class="gold-color"
+                >A.S. in Computer Science from Bakersfield College, 2023</span
+              >
+            </h4>
+          </div>
+          <div class="sub-content">
+            <ul>
+              <li><span class="blue-color">GPA:</span> 3.6</li>
+              <li>
+                <span class="blue-color">Dean's List:</span><br />Spring 2022,
+                Fall 2022 , Spring 2023
+              </li>
+              <li>
+                <span class="blue-color">Relevant Coursework:</span>
+                <ul>
+                  <li>Computer Programing I (C++) & II (Java)</li>
+                  <li>Computer Architecture (MIPS)</li>
+                  <li>Discrete Structures</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sub">
+          <div class="sub-head">
+            <h4>
+              <span class="gold-color"
+                >A.A. in Liberal Arts from Bakersfield College, 2023</span
+              >
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="proj-card">
+        <h3>Projects</h3>
+        <div class="sub">
+          <div class="sub-head">
+            <h4>
+              <span class="gold-color">Crime analysis Machine Learning</span>
+            </h4>
+          </div>
+          <div class="sub-content">
+            <p>
+              Created a machine learning model to analyze crime data. Used
+              Python with libraries such as Pandas, Scikit-learn, and Matplotlib
+              to preprocess data, train models, and visualize results. Achieved
+              an accuracy of 85% in predicting crime hotspots.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="exp-card"><h3>Experience</h3></div>
+      <div class="card" id="contact-card">
+        <h3>Contact</h3>
+        <p>dasonbaird25@gmail.com</p>
+      </div>
+    </section>
     <script src="path/to/your/script.js"></script>
-</body>
+  </body>
 </html>

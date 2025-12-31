@@ -1,35 +1,126 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background: linear-gradient(180deg, #056cd463, #ffffff);
-    height: 100vh;
-    width: 100vw;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #002a55, #00075e);
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+a {
+  text-decoration: none;
+  color: #ffc72c;
+  font-weight: bold;
+  gap: 10px;
+  padding: 5px;
 }
 .header {
-    text-align: center;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
 }
 .nav {
-    position: fixed;
-    display: fixed !important;
-    flex-direction: column;
-    gap: 30px;
-    padding: 10px;
-    width: 100px;   
-    margin: 0;
+  position: fixed;
+  gap: 30px;
+  width: 100px;
 }
-.nav > button {
-    display: flex;
-    align-items: center; /* Vertically centers items */
-    justify-content: center; /* Horizontally centers */
-    height: 30px; /* Example height */
-    padding: 0; /* Reset padding if needed */
-    width: 70px;
-    cursor: pointer;
-    margin: 0 0 10px 0;
-    background-color: transparent;
-    color: black;
-    border: none;
-    
-    border-radius: 5px;
+.nav > a {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  height: 30px;
+  padding: 0;
+  width: 70px;
+  cursor: pointer;
+  margin: 0 0 10px 0;
+  background-color: transparent;
+  color: #ffc72c;
+  border: none;
+  z-index: 20;
+  border-radius: 5px;
+}
+.nav > a:hover {
+  color: #00075e;
+}
+
+#edu-card {
+  background: linear-gradient(180deg, #002a55, #00075e);
+  color: white;
+  width: 40%;
+  align-self: center;
+  border-radius: 10px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 200px 20px 200px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #00000029;
+  width: 60%;
+  align-self: center;
+  background: linear-gradient(180deg, #002a55, #00075e);
+  color: white;
+  width: 40%;
+  align-self: center;
+  border-radius: 10px;
+}
+#top-card {
+  margin-top: 30px;
+  width: 50% !important;
+}
+
+.all-info {
+  color: #00075e;
+  background: white;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(247, 246, 246);
+  margin: 0 0;
+  align-self: center;
+  width: 100vw;
+  text-align: center;
+  box-shadow: 10px 10px 20px #00000029;
+  border-top-left-radius: 50% 5%;
+  border-top-right-radius: 50% 5%;
+  border-bottom-left-radius: 50% 5%;
+  border-bottom-right-radius: 50% 5%;
+}
+.sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px 10px 10px 0;
+  background: white;
+  border-radius: 10px;
+  width: 80%;
+  align-self: center;
+  box-shadow: 10px 10px 20px #00000029;
+  color: black;
+}
+.sub-content {
+  width: 100%;
+  padding: 0px;
+  gap: 0px;
+  margin: 0 0 5px 0;
+  text-align: left;
+}
+
+ul {
+  list-style: none; /* Sets type to square, position to inside */
+}
+.blue-color {
+  color: #00075e;
+  font-weight: bold;
+}
+.gold-color {
+  color: #ffc72c;
+  font-weight: bold;
 }
