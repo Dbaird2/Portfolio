@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  font: italic normal bold 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 body {
   font-family: Arial, sans-serif;
@@ -47,31 +48,40 @@ a {
 #edu-card {
   background: linear-gradient(180deg, #002a55, #00075e);
   color: white;
-  width: 40%;
   align-self: center;
   border-radius: 10px;
 }
 .card {
+  z-index: 1111;
+  --bg: #e8e8e8;
+  --contrast: #e2e0e0;
+  --grey: #93a1a1;
+  position: relative;
+  padding: 9px;
+  background-color: var(--bg);
+  border-radius: 35px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 20px 200px 20px 200px;
+  margin: 10px auto;
+  width: min(1100px, 80vw);
   padding: 20px;
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 20px #00000029;
-  width: 60%;
-  align-self: center;
+
   background: linear-gradient(180deg, #002a55, #00075e);
   color: white;
-  width: 40%;
   align-self: center;
   border-radius: 10px;
 }
+#contact-card,
 #top-card {
   margin-top: 30px;
-  width: 50% !important;
+  width:fit-content;
 }
 
 .all-info {
@@ -85,42 +95,106 @@ a {
   box-shadow: 0 4px 8px rgb(247, 246, 246);
   margin: 0 0;
   align-self: center;
-  width: 100vw;
   text-align: center;
   box-shadow: 10px 10px 20px #00000029;
-  border-top-left-radius: 50% 5%;
-  border-top-right-radius: 50% 5%;
-  border-bottom-left-radius: 50% 5%;
-  border-bottom-right-radius: 50% 5%;
+  border-top-left-radius: 50% 2%;
+  border-top-right-radius: 50% 2%;
+  border-bottom-left-radius: 50% 2%;
+  border-bottom-right-radius: 50% 2%;
 }
 .sub {
+  z-index: 1111;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 5px 10px 10px 0;
   background: white;
   border-radius: 10px;
-  width: 80%;
   align-self: center;
   box-shadow: 10px 10px 20px #00000029;
   color: black;
+  align-self: baseline;
+}
+.sub:hover {
+  translate: 5px -5px;
 }
 .sub-content {
   width: 100%;
-  padding: 0px;
+  padding: 4px;
   gap: 0px;
-  margin: 0 0 5px 0;
+  margin: 5px 0 5px 10px;
   text-align: left;
 }
 
-ul {
-  list-style: none; /* Sets type to square, position to inside */
-}
 .blue-color {
-  color: #00075e;
+  
+  color: #008080;
   font-weight: bold;
 }
 .gold-color {
-  color: #ffc72c;
+  color: #00075e;
   font-weight: bold;
+}
+.project-type {
+  text-align: center;
+}
+#contact-card {
+  margin-bottom: 40px;
+}
+.experience-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  width: min(1000px, 90%);
+}
+@media (max-width: 700px) {
+  .all-info {
+    border-top-left-radius: 50% 1%;
+    border-top-right-radius: 50% 1%;
+    border-bottom-left-radius: 50% 1%;
+    border-bottom-right-radius: 50% 1%;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* justify-content: center;
+    align-items: center;
+    margin: 20px 200px 20px 200px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px #00000029;
+    width: 60%;
+    align-self: center;
+    background: linear-gradient(180deg, #002a55, #00075e);
+    color: white;
+    width: 40%;
+    align-self: center;
+    border-radius: 10px; */
+  }
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-conic-gradient(var(--bg) 0.0000001%, var(--grey) 0.000104%) 60% 60%/600% 600%;
+  filter: opacity(10%) contrast(105%);
+}
+
+.card-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--contrast);
+  border-radius: 30px;
+  /* Content style */
+  font-weight: 900;
+  color: #00075e;
+  text-align: center;
+  font-family: monospace;
 }
