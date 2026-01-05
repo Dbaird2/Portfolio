@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
-  font: italic normal bold 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif
+  font: italic normal bold 16px/1.5 "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
 }
 body {
   font-family: Arial, sans-serif;
@@ -12,55 +13,46 @@ body {
 a {
   text-decoration: none;
   color: #ffc72c;
-  font-weight: bold;
+  font-weight: 700;
   gap: 10px;
   padding: 5px;
 }
 .header {
   text-align: center;
   margin-bottom: 40px;
-  color: white;
+  color: #fff;
 }
-
-  /* The sidebar menu */
 .sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 8rem; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  width: 8rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
   background: linear-gradient(180deg, #002a55, #00075e);
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-x: hidden;
   padding-top: 20px;
 }
-
-/* The navigation menu links */
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 1rem;
   display: block;
 }
-
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #f1f1f1;
 }
-
 .sidenav a.active {
   color: #007bff;
-  font-weight: bold;
+  font-weight: 700;
 }
-
 .sidenav a.active::after {
   content: "-";
-  color: #ffdf00; /* Gold color for the star */
+  color: #ffdf00;
 }
-
 #edu-card {
   background: linear-gradient(180deg, #002a55, #00075e);
-  color: white;
+  color: #fff;
   align-self: center;
   border-radius: 10px;
 }
@@ -70,42 +62,34 @@ a {
   --contrast: #e2e0e0;
   --grey: #93a1a1;
   position: relative;
-  padding: 9px;
-  background-color: var(--bg);
-  border-radius: 35px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px auto;
   width: min(1100px, 80vw);
   padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 10px 10px 20px #00000029;
 
+  box-shadow: 10px 10px 20px #00000029;
   background: linear-gradient(180deg, #002a55, #00075e);
-  color: white;
+  color: #fff;
   align-self: center;
   border-radius: 10px;
 }
 #contact-card,
 #top-card {
   margin-top: 30px;
-  width:fit-content;
+  width: fit-content;
 }
-
 .all-info {
   color: #00075e;
-  background: white;
+  background: #fff;
   align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgb(247, 246, 246);
+  box-shadow: 0 4px 8px #f7f6f6;
   margin: 0 0;
   align-self: center;
   text-align: center;
@@ -117,16 +101,10 @@ a {
 }
 .sub {
   z-index: 1111;
-
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   margin: 5px 10px 10px 0;
-  background: white;
-  border-radius: 10px;
-  align-self: center;
+  background: #fff;
   box-shadow: 10px 10px 20px #00000029;
-  color: black;
   align-self: baseline;
 }
 .sub:hover {
@@ -135,19 +113,17 @@ a {
 .sub-content {
   width: 100%;
   padding: 4px;
-  gap: 0px;
+  gap: 0;
   margin: 5px 0 5px 10px;
   text-align: left;
 }
-
 .blue-color {
-  
-  color: #008080;
-  font-weight: bold;
+  color: teal;
+  font-weight: 700;
 }
 .gold-color {
   color: #00075e;
-  font-weight: bold;
+  font-weight: 700;
 }
 .project-type {
   text-align: center;
@@ -161,7 +137,7 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   width: min(1000px, 90%);
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .all-info {
     border-top-left-radius: 50% 1%;
     border-top-right-radius: 50% 1%;
@@ -171,34 +147,29 @@ a {
   .card {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* justify-content: center;
-    align-items: center;
-    margin: 20px 200px 20px 200px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 10px 10px 20px #00000029;
-    width: 60%;
-    align-self: center;
-    background: linear-gradient(180deg, #002a55, #00075e);
-    color: white;
-    width: 40%;
-    align-self: center;
-    border-radius: 10px; */
   }
-  .sidenav {
-    width: 50px;
-  } 
 }
-
+@media (max-width: 1400px) {
+  .sidenav {
+    width: 100% !important;
+    height: 5% !important;
+    z-index: 2000;
+  }
+  .sidenav a {
+    display: inline !important;
+  }
+}
 .card-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: repeating-conic-gradient(var(--bg) 0.0000001%, var(--grey) 0.000104%) 60% 60%/600% 600%;
+  background: repeating-conic-gradient(
+      var(--bg) 0.0000001%,
+      var(--grey) 0.000104%
+    )
+    60% 60%/600% 600%;
   filter: opacity(10%) contrast(105%);
 }
-
 .card-inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -208,7 +179,6 @@ a {
   overflow: hidden;
   background-color: var(--contrast);
   border-radius: 30px;
-  /* Content style */
   font-weight: 900;
   color: #00075e;
   text-align: center;
