@@ -158,6 +158,9 @@ a {
   .sidenav a {
     display: inline !important;
   }
+  body {
+    margin-top: 90px;
+  }
 }
 .card-overlay {
   position: absolute;
