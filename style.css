@@ -5,7 +5,6 @@ html {
   font-size: 1em;
 }
 body {
-  font-family: Arial, sans-serif;
   background: linear-gradient(180deg, #002a55, #00075e);
   margin: 0;
   height: 100vh;
@@ -13,7 +12,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: #ffc72c;
+  color: #c0c0c0;
   font-weight: 700;
   gap: 10px;
   padding: 5px;
@@ -44,13 +43,13 @@ a {
   color: #f1f1f1;
 }
 .sidenav a.active {
-  color: #007bff;
+  color: #ff7f50;
   font-weight: 700;
   text-decoration: underline;
 }
 .sidenav a.active::after {
   content: "";
-  color: #ffdf00;
+  color: #d6b588;
 }
 #edu-card {
   background: linear-gradient(180deg, #002a55, #00075e);
@@ -77,30 +76,56 @@ a {
   color: #fff;
   align-self: center;
   border-radius: 10px;
+  opacity: 0; /* Start hidden */
+  transform: translateX(-50% 50%); /* For centering, if needed */
+  transition: all 0.5s linear, opacity 0.5s linear;
 }
+
+.active-card {
+  opacity: 1; /* Start hidden */
+  transform: translateX(-50% 50%); /* For centering, if needed */
+  transition: all 0.5s linear, opacity 0.5s linear;
+}
+
 #contact-card,
 #top-card {
   margin-top: 30px;
   width: fit-content;
 }
 .all-info {
-  color: #00075e;
-  background: linear-gradient(180deg, #e2e0e0, gray 100%);
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px #f7f6f6;
-  margin: 0 0;
-  align-self: center;
-  text-align: center;
-  box-shadow: 10px 10px 20px #00000029;
+  width: 100%;
+  background: linear-gradient(to bottom, rgb(207, 207, 207) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(to right, rgb(205, 253, 253), #eeeeee, #fdd7c9);
+  position: relative;
+  overflow: hidden;
   border-top-left-radius: 50% 2%;
   border-top-right-radius: 50% 2%;
   border-bottom-left-radius: 50% 2%;
   border-bottom-right-radius: 50% 2%;
 }
+.all-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /*
+  background-image: linear-gradient(90deg, #00075e 1px, transparent 0.5px);
+  */
+  background-size: 150px 100%;
+  pointer-events: none;
+  /*
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 10%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 10%
+  );
+  */
+}
+
 .sub {
   z-index: 1111;
   flex-direction: column;
