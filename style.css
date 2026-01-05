@@ -85,7 +85,7 @@ a {
 }
 .all-info {
   color: #00075e;
-  background: #fff;
+  background: linear-gradient(180deg, #e2e0e0, #ffc72c 100%);
   align-self: center;
   display: flex;
   flex-direction: column;
