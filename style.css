@@ -21,33 +21,7 @@ a {
   margin-bottom: 40px;
   color: white;
 }
-/*
-.nav {
-  background: gray;
-  height: 100vh;
-  position: fixed;
-  gap: 30px;
-  width: 100px;
-}
-.nav > a {
-  display: flex;
-  align-items: left;
-  justify-content: left;
-  height: 30px;
-  padding: 0;
-  width: 70px;
-  cursor: pointer;
-  margin: 0 0 10px 0;
-  background-color: transparent;
-  color: #ffc72c;
-  border: none;
-  z-index: 20;
-  border-radius: 5px;
-}
-.nav > a:hover {
-  color: #00075e;
-}
-  */
+
   /* The sidebar menu */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
