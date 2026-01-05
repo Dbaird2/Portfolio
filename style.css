@@ -21,7 +21,10 @@ a {
   margin-bottom: 40px;
   color: white;
 }
+/*
 .nav {
+  background: gray;
+  height: 100vh;
   position: fixed;
   gap: 30px;
   width: 100px;
@@ -43,6 +46,42 @@ a {
 }
 .nav > a:hover {
   color: #00075e;
+}
+  */
+  /* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 8rem; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background: linear-gradient(180deg, #002a55, #00075e);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav a.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.sidenav a.active::after {
+  content: "-";
+  color: #ffdf00; /* Gold color for the star */
 }
 
 #edu-card {
@@ -173,6 +212,9 @@ a {
     align-self: center;
     border-radius: 10px; */
   }
+  .sidenav {
+    width: 50px;
+  } 
 }
 
 .card-overlay {

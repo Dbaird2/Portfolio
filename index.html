@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="portfolio.png">
+
+  <title>Portfolio</title>
   <link href="style.css" rel="stylesheet" />
 </head>
 
@@ -12,20 +14,21 @@
   <div class="header">
     <h1>Welcome!</h1>
   </div>
-  <div class="nav">
+  <div class="sidenav">
     <a href="#top-card" id="top">Top</a>
     <a href="#edu-card" id="edu">Education</a>
     <a href="#proj-card" id="proj">Projects</a>
     <a href="#exp-card" id="exp">Experience</a>
+    <a href="#future-projects-card" id="exp">Future Projects</a>
     <a href="#contact-card" id="contact">Contact</a>
   </div>
-  <section class="all-info">
+  <article class="all-info">
 
-    <div class="card" id="top-card">
+    <section class="card" id="top-card">
       <p>Hello my name is Dason. I am a recent graduate looking for work.</p>
-    </div>
+    </section>
     <!------------------------------------------------------------------------------------------>
-    <div class="card" id="edu-card">
+    <section class="card" id="edu-card">
       <h3>Education</h3>
             <div class="projects-grid">
                 <div class="card-overlay"></div>
@@ -94,9 +97,9 @@
       </div>
      
       </div>
-    </div>
+    </section>
     <!------------------------------------------------------------------------------------------>
-    <div class="card" id="proj-card">
+    <section class="card" id="proj-card">
       <h3>Projects</h3>
       <div class="projects-grid">
 
@@ -363,8 +366,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="card" id="exp-card">
+    </section>
+    <section class="card" id="exp-card">
       <h3>Experience</h3>
       <div class="experience-grid">
 
@@ -445,8 +448,8 @@
           </div>
         </div>
       </div>
-    </div>
-     <div class="card" id="future-projects-card">
+    </section>
+     <section class="card" id="future-projects-card">
       <h3>Future Projects</h3>
             <div class="projects-grid">
                 <div class="card-overlay"></div>
@@ -477,13 +480,13 @@
       </div>
       <!------------------------------------------------------------------------------------------>
       </div>
-      </div>
-    <div class="card" id="contact-card">
+      </section>
+    <section class="card" id="contact-card">
       <h3>Contact</h3>
       <a href="mailto:dasonbaird25@gmail.com">dasonbaird25@gmail.com</a>
-    </div>
-  </section>
-  <script src="path/to/your/script.js"></script>
+    </section>
+  </article>
+  <script src="script.js"></script>
 </body>
 
 </html>
