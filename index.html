@@ -1,497 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+      rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="portfolio.png" />
 
-    <link rel="icon" type="image/x-icon" href="portfolio.png">
+    <title>Portfolio</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-  <title>Portfolio</title>
-  <link href="style.css" rel="stylesheet" />
-</head>
+  <body>
+    <nav class="top">
+      <span class="name">Dason Baird</span>
+      <a href="https://github.com/dbiard" target="_blank"
+        ><i class="fa fa-github-square" style="font-size: 24px; color: gray"></i
+      ></a>
+      <a href="https://linkedIn.com/dbiard" target="_blank"
+        ><i
+          class="fa fa-linkedin-square"
+          style="font-size: 24px; color: gray"></i
+      ></a>
+      <a href="resume.pdf" target="_blank"
+        ><i
+          class="fa fa-download"
+          style="font-size: 12px; color: gray"
+          aria-hidden="true"></i>
+        Resume</a
+      >
+    </nav>
+    <div class="wrapper">
+      <aside>
+        <span class="aside-header">Sections</span>
+        <a
+          href="#introduction"
+          id="intro"
+          class="contents"
+          onclick="sidebarActive(this)"
+          >Introduction</a
+        >
+        <a
+          href="#edu-card"
+          id="edu"
+          class="contents"
+          onclick="sidebarActive(this)"
+          >Education</a
+        >
+        <a
+          href="#proj-card"
+          id="proj"
+          class="contents"
+          onclick="sidebarActive(this)"
+          >Projects</a
+        >
+        <a
+          href="#exp-card"
+          id="exp"
+          class="contents"
+          onclick="sidebarActive(this)"
+          >Experience</a
+        >
+        <a
+          href="#future-projects-card"
+          id="future"
+          class="contents"
+          onclick="sidebarActive(this)"
+          >Future Projects</a
+        >
+        <a
+          href="#contact-card"
+          id="contact"
+          class="contents"
+          onclick="sidebarActive(this)"
+          >Contact</a
+        >
+      </aside>
+      <main class="articles">
+        <div class="flex">
+          <article id="intro-small-card" class="small-cards">
+            Introduction
+            <div class="small-sub-cards">
+              <div class="small-card">
+                <div class="small-card-body">
+                  <p>
+                    Hello! My name is Dason Baird and I am a software engineer<br>
+                    based in the United States. I have a passion for building<br>
+                    software that solves real-world problems and I am always<br>
+                    looking for new opportunities to learn and grow as a<br>
+                    developer.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
 
-<body>
-  <div class="header">
-    <h1>Welcome!</h1>
-  </div>
-  <div class="sidenav">
-    <a href="#top-card" id="top">Top</a>
-    <a href="#edu-card" id="edu">Education</a>
-    <a href="#proj-card" id="proj">Projects</a>
-    <a href="#exp-card" id="exp">Experience</a>
-    <a href="#future-projects-card" id="exp">Future Projects</a>
-    <a href="#contact-card" id="contact">Contact</a>
-  </div>
-  <article class="all-info">
-
-    <section class="card" id="top-card">
-      <span>Hello my name is Dason. I am a recent graduate looking for work as a programmer or IT role.</span>
-    </section>
-    <!------------------------------------------------------------------------------------------>
-    <section class="card" id="edu-card">
-      <h3>Education</h3>
-            <div class="projects-grid">
-                <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-        <div class="sub-head">
-          <h4>
-            <span class="gold-color">B.S. in Computer Science from California State University
-              Bakersfield, 2025</span>
-          </h4>
-        </div>
-        <div class="sub-content">
-          <ul>
-            <li><span class="blue-color">GPA:</span> 3.89</li>
-            <li>
-              <span class="blue-color">Dean's List:</span> <br />Spring 2024,
-              Fall 2024, Spring 2025, Fall 2025
-            </li>
-            <li>
-              <span class="blue-color">Relevant Coursework:</span>
-              <ul>
-                <li>Algorithm Analysis</li>
-                <li>Database Systems (PHP, MariaDB)</li>
-                <li>Operating Systems (C)</li>
-                <li>Software Engineering (C++)</li>
-                <li>Computer Networks (Wireshark)</li>
-                <li>Distributed & Parallel Computation (C, C++, OpenMP)</li>
-                <li>
-                  Networks & Computer Security (Crytpgraphy, Kali Linux)
-                </li>
-                <li>Theory of Computation (Automata, Turing Machines)</li>
-                <li>Programming Languages(PERL, Fortran, ADA, ML, Python)</li>
-                <li>Artificial Intelligence</li>
-                <li>Probability Theory</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!------------------------------------------------------------------------------------------>
-    <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-        <div class="sub-head">
-          <h4>
-            <span class="gold-color">A.S. in Computer Science from Bakersfield College, 2023</span>
-          </h4>
-        </div>
-        <div class="sub-content">
-          <ul>
-            <li><span class="blue-color">GPA:</span> 3.6</li>
-            <li>
-              <span class="blue-color">Dean's List:</span><br />Spring 2022,
-              Fall 2022 , Spring 2023
-            </li>
-            <li>
-              <span class="blue-color">Relevant Coursework:</span>
-              <ul>
-                <li>Computer Programing I (C++) & II (Java)</li>
-                <li>Computer Architecture (MIPS)</li>
-                <li>Discrete Structures</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-     
-      </div>
-    </section>
-    <!------------------------------------------------------------------------------------------>
-    <section class="card" id="proj-card">
-      <h3>Projects</h3>
-      <div class="projects-grid">
-
-        <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-          
-          <div class="sub-head">
-            <h4>
-              <a href="https://github.com/Dbaird2/ML-group-project/blob/main/Tensorflow-project.py" target="_blank"
-                rel="noopener"><span class="gold-color">Crime analysis Machine Learning <i class="fa fa-github"></i></span></a>
-            </h4>
-          </div>
-          <div class="sub-content">
-            <h4 class="project-type">
-              <span class="blue-color">Group Project</span>
-            </h4>
-            <p>
-              Created a machine learning model to analyze crime data. Used
-              Python with libraries such as Pandas, Scikit-learn, and Matplotlib
-              to preprocess data, train models, and visualize results. Achieved
-              an accuracy of 85% in predicting crime jail rate.
-            </p>
-            <p>
-              <span class="blue-color">Technologies:</span> Python, Tensorflow,
-              Scikit-learn, Pandas
-            </p>
+          <div class="code-snippet">
+            <pre><code id="code-block" class="language-javascript"></code></pre>
           </div>
         </div>
-        <!------------------------------------------------------------------------------------------>
-        <div class="card-overlay"></div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+  <script>
+    async function loadCode(file) {
+      const response = await fetch(
+        "https://raw.githubusercontent.com/Dbaird2/" + file,
+      );
 
-      <div class="sub card-inner">
-          <div class="sub-head">
-            <h4>
-              <span class="gold-color">Dataworks</span>
-            </h4>
-            <a href="https://github.com/Dbaird2/seniorproject" target="_blank" rel="noopener"><span
-                class="blue-color">Website <i class="fa fa-github"></i></span></a>
-            <a href="https://github.com/Dbaird2/senior-mobile" target="_blank" rel="noopener"><span
-                class="blue-color">Mobile <i class="fa fa-github"></i></span></a>
-          </div>
-          <div class="sub-content">
-            <h4 class="project-type">
-              <span class="blue-color">Group Project</span>
-            </h4>
-            <p>
-              DataWorks is a full-stack asset auditing platform designed to
-              manage large inventories across multiple buildings and
-              departments. It supports both profile-based audits with preloaded
-              database assets and Excel-based uploads, allowing flexible audit
-              workflows.
-            </p>
-            <p>
-              The backend is built with PHP and PostgreSQL, using a normalized
-              schema for assets, rooms, buildings, and audits to ensure data
-              integrity and reliable reporting. A REST API provides efficient
-              access to audit and asset data for both web and mobile clients.
-            </p>
-            <p>
-              A scheduled CronJob integrates with Kuali by querying form
-              submissions via GraphQL and automatically updating the database.
-              This enables near real-time synchronization of external form data
-              without manual intervention.
-            </p>
-            <p>
-              The web interface is optimized for large datasets using AJAX-based
-              pagination, efficient table rendering to improve performance and
-              reduce Largest Contentful Paint (LCP), and skeleton tables to
-              improve on HTML standards. A React Native mobile app consumes the
-              same GraphQL API to support on-site audits and real-time data
-              submission.
-            </p>
-            <p>
-              <span class="blue-color">Technologies:</span> PHP, PostgreSQL,
-              GraphQL, JavaScript, AJAX, React Native, CronJobs, PHPSpreadsheet,
-              Render
-            </p>
-          </div>
-        </div>
-        <!------------------------------------------------------------------------------------------>
-        <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-          <div class="sub-head">
-            <h4>
-              <a href="https://github.com/Dbaird2/MariaDB-Research-Report/blob/main/Week15Report/Week15Report.php"
-                target="_blank" rel="noopener"><span class="gold-color">MySQL (MariaDB) Research + Benchmarking
-                  Project <i class="fa fa-github"></i></span></a>
-            </h4>
-          </div>
-          <div class="sub-content">
-            <h4 class="project-type">
-              <span class="blue-color">Duo Project</span>
-            </h4>
-            <p>
-              MariaDB Research Report is a short-term, two-person research
-              project focused on evaluating how vertical and horizontal table
-              design, indexing strategies, and memory-related optimizations
-              affect query performance and storage usage in MariaDB.
-            </p>
-            <p>
-              Over a three-week period, we designed and ran experiments to
-              compare space–time trade-offs across different schema and
-              optimization approaches, documenting when each technique is most
-              effective depending on the performance goal. Rather than dividing
-              the work by sections, we collaborated on each research phase
-              together, contributing individual analysis and recommendations as
-              the project evolved.
-            </p>
-            <p>
-              This project strengthened our understanding of practical database
-              performance tuning and how design decisions directly impact
-              real-world query behavior.
-            </p>
-            <p><span class="blue-color">Technologies:</span> PHP, MariaDB</p>
-          </div>
-        </div>
-        <!------------------------------------------------------------------------------------------>
-        <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-          <div class="sub-head">
-            <h4>
-               <h4>
-              <span class="gold-color">Banking Management System (BAMS)</span>
-            </h4>
-          </h4>
-          <a href="https://artemis.cs.csub.edu/~bams/" target="_blank" rel="noopener"><span
-            class="blue-color">Website <i class="fa fa-globe"></i></span></a>
-            <a href="https://github.com/Dbaird2/Database-Group-Project" target="_blank" rel="noopener"><span
-                class="blue-color">Code <i class="fa fa-github"></i></span></a>
-          </div>
-          <div class="sub-content">
-            <h4 class="project-type">
-              <span class="blue-color">Group Project</span>
-            </h4>
-            <p>
-              BAMS is a database-driven web application developed as a final
-              project to demonstrate database design, implementation, and
-              usability. The system mimics core banking functionality, including
-              user registration, authentication, account management, and
-              transactional operations, with a strong emphasis on data integrity
-              and consistency.
-            </p>
-            <p>
-              The project involved designing and implementing a relational
-              database schema to support secure logins, account relationships,
-              and financial transactions. Care was taken to structure tables and
-              constraints in a way that supports accurate transaction tracking
-              and reliable user workflows.
-            </p>
-            <p>
-              BAMS highlights practical considerations in building
-              database-backed applications, including schema design, relational
-              integrity, and user-facing interaction with persistent data,
-              rather than focusing solely on frontend presentation.
-            </p>
-            <p><span class="blue-color">Technologies:</span> PHP, MariaDB</p>
-          </div>
-        </div>
-        <!------------------------------------------------------------------------------------------>
-        <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-          <div class="sub-head">
-            <h4>
-              <a href="https://github.com/Dbaird2/games" target="_blank" rel="noopener">
-                <span class="gold-color">Real-Time Multiplayer Games Platform (WIP) <i class="fa fa-github"></i></span>
-              </a>
-            </h4>
-          </div>
-          <div class="sub-content">
-            <h4 class="project-type">
-              <span class="blue-color">Individual</span>
-            </h4>
-            <p>
-              Games is a JavaScript-focused project built to explore real-time
-              web interactions using WebSockets and REST APIs. The platform
-              currently includes a complete Connect Four implementation and a
-              work-in-progress multiplayer Chess experience, both designed to
-              support real-time interaction between players.
-            </p>
-            <p>Key features include:
-            <ul>
-              <li>Multiplayer Lobby System: A real-time lobby powered by WebSockets, allowing players to create, join,
-                and rejoin game sessions with live updates.</li>
-              <li>Persistent Lobby Storage: PostgreSQL is used to store active and returned lobbies so players can
-                resume games or reconnect even after leaving the page.</li>
-              <li>REST API Endpoints: Supplementary RESTful interfaces support game metadata, lobby actions, and
-                integration with the frontend UI.</li>
-              <li>WebSockets for Real-Time Gameplay: All live game state changes, matchmaking, and player communication
-                are handled through WebSocket connections for responsive interaction.</li>
-            </ul>
-            </p>
-            <p>This project highlights practical experience with event-driven communication, backend API design, and
-              state persistence in modern web applications that require real-time feedback loops.</p>
-            <p><span class="blue-color">Technologies:</span> JavaScript, Websockets, REST APIs, PostgreSQL</p>
-          </div>
-        </div>
-        <!------------------------------------------------------------------------------------------>
-        <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-          <div class="sub-head">
-            <h4>
-              <a href="https://github.com/Dbaird2/blok" target="_blank" rel="noopener"><span
-                class="gold-color">Blok <i class="fa fa-github"></i></span></a>
-            </h4>
-           
-          </div>
-          <div class="sub-content">
-            <h4 class="project-type">
-              <span class="blue-color">Group Project</span>
-            </h4>
-            <p>
-              Blok is a 2D action game built in pure C++ with base OpenGL as part of a software engineering course. The
-              objective of the game is to collect coins and reach the end without taking damage, with progressively
-              challenging levels and mechanics.
-            </p>
-            <p>This project was developed using the Waterfall methodology, emphasizing structured planning, sequential
-              development stages, and clear documentation. A key learning focus was confidently integrating and
-              extending third-party code, reading unfamiliar codebases, and adapting them to meet project requirements.
-            </p>
-            <p>Blok demonstrates proficiency in low-level game programming, graphics rendering with OpenGL, C++
-              fundamentals, and disciplined software development practices.</p>
-
-            <p>Key features include:
-            <ul>
-              <li>Multiplayer Lobby System: A real-time lobby powered by WebSockets, allowing players to create, join,
-                and rejoin game sessions with live updates.</li>
-              <li>Persistent Lobby Storage: PostgreSQL is used to store active and returned lobbies so players can
-                resume games or reconnect even after leaving the page.</li>
-              <li>REST API Endpoints: Supplementary RESTful interfaces support game metadata, lobby actions, and
-                integration with the frontend UI.</li>
-              <li>WebSockets for Real-Time Gameplay: All live game state changes, matchmaking, and player communication
-                are handled through WebSocket connections for responsive interaction.</li>
-            </ul>
-            </p>
-            <p>This project highlights practical experience with event-driven communication, backend API design, and
-              state persistence in modern web applications that require real-time feedback loops.</p>
-            <p><span class="blue-color">Technologies:</span> C++, OpenGL</p>
-            <p><span class="blue-color">Focus Areas:</span> Graphics programming, game mechanics, software engineering
-              methodology, code integration</p>
-          </div>
-        </div>
-        <!------------------------------------------------------------------------------------------>
-        <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-          <div class="sub-head">
-            <h4>
-              <a href="https://github.com/Dbaird2/React-Weather-App" target="_blank" rel="noopener">
-                <span class="gold-color">Weather Application (WIP) <i class="fa fa-github"></i></span>
-              </a>
-            </h4>
-          </div>
-          <div class="sub-content">
-            <h4 class="project-type">
-              <span class="blue-color">Individual</span>
-            </h4>
-            <p>
-              This weather website focuses on letting users display cities they are interested in. It shows the city, temperature, weather type, humidity, feels like temperature, and wind speed.
-            </p>
-            
-            <p><span class="blue-color">Technologies:</span> React, FastAPI, REST APIs, Python, Tailwindcss</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="card" id="exp-card">
-      <h3>Experience</h3>
-      <div class="experience-grid">
-
-        <!------------------------------------------------------------------------------------------>
-        <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-          <div class="sub-head">
-            <h4>
-              <span class="gold-color">Distribution Assistant</span>
-            </h4>
-            <p><span class="blue-color">CSU Bakersfield</span> | Bakersfield, CA</p>
-            <p>Sep 2024 – December 2025</p>
-          </div>
-          <div class="sub-content">
-            <p>
-              Managed critical mail distribution operations across the university campus, ensuring seamless communication 
-              flow between departments through timely and accurate delivery of incoming and outgoing correspondence. 
-              Led physical asset verification initiatives during departmental audits, meticulously confirming inventory 
-              presence and condition to maintain compliance with university standards.
-            </p>
-            <p>
-              Demonstrated strong attention to detail by completing comprehensive audit documentation that supported 
-              institutional accountability and regulatory compliance. Proactively identified operational inefficiencies 
-              and contributed to implementing process improvements that enhanced both mail delivery workflows and audit 
-              procedures, resulting in measurable gains in departmental efficiency.
-            </p>
-          </div>
-        </div>
-        <!------------------------------------------------------------------------------------------>
-        <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-          <div class="sub-head">
-            <h4>
-              <span class="gold-color">Production Assembler</span>
-            </h4>
-            <p><span class="blue-color">IMI Adaptas</span> | Palmer, MA</p>
-            <p>Jun 2024 – Aug 2024</p>
-          </div>
-          <div class="sub-content">
-            <p>
-              Executed precision manufacturing and quality assurance operations in a fast-paced production environment. 
-              Conducted comprehensive testing protocols on valve assemblies to verify compliance with rigorous company 
-              standards and customer specifications, ensuring product reliability and performance excellence.
-            </p>
-            <p>
-              Maintained meticulous quality control through systematic cleaning and maintenance procedures, eliminating 
-              defects and contaminants prior to packaging. Applied strong organizational skills to efficiently prepare 
-              products for shipment, including proper packaging and accurate label generation, contributing to the 
-              company's commitment to delivering defect-free products on schedule.
-            </p>
-          </div>
-        </div>
-        <!------------------------------------------------------------------------------------------>
-        <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-          <div class="sub-head">
-            <h4>
-              <span class="gold-color">Academic Tutor – Mathematics & Physics</span>
-            </h4>
-            <p><span class="blue-color">CSU Bakersfield</span> | Bakersfield, CA</p>
-            <p>Aug 2024 – Dec 2024</p>
-          </div>
-          <div class="sub-content">
-            <p>
-              Provided personalized remote tutoring sessions for university peers in mathematics and physics, adapting 
-              teaching strategies to accommodate diverse learning styles and skill levels. Leveraged virtual collaboration 
-              tools to create an engaging digital learning environment that fostered conceptual understanding and 
-              problem-solving confidence.
-            </p>
-            <p>
-              Strengthened communication and interpersonal skills while breaking down complex quantitative concepts into 
-              accessible explanations. Helped students overcome academic challenges and build foundational knowledge, 
-              contributing to their success in challenging STEM coursework.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-     <section class="card" id="future-projects-card">
-      <h3>Future Projects</h3>
-            <div class="projects-grid">
-                <div class="card-overlay"></div>
-
-      <div class="sub card-inner">
-        <div class="sub-head">
-          <h4>
-            <span class="gold-color">Transit Tracker</span>
-          </h4>
-        </div>
-        <div class="sub-content">
-          <h4 class="project-type">
-              <span class="blue-color">Individual</span>
-            </h4>
-            <p>
-             Designed to help users track public transportation in real-time. The website will provide live updates on the positions of buses, trains, and other transit vehicles within a city or region. Using GPS and real-time data, it will offer interactive maps, estimated arrival times, and route information, making commuting easier and more efficient.
-            </p>
-            <ul>
-              <li>Live Transit Tracking: Users can view the exact locations of public transportation vehicles in real-time on an interactive map.</li>
-              <li>Estimated Arrival Times: Get accurate predictions on when the next bus, train, or other vehicle will arrive at a given stop.</li>
-              <li>User-friendly Interface: Designed with simplicity in mind, the interface will be easy to navigate, even for first-time users.</li>
-              <li>Multi-Platform Access: Accessible on both desktop and mobile devices, ensuring users can check transit positions on the go.</li>
-              <li>Route Optimization: The website will suggest the fastest and most convenient routes based on current transit positions, helping users save time.</li>
-            </ul>
-            
-            <p><span class="blue-color">Technologies:</span> Java, Redis, REST APIs, Docker, Tailwindcss, Microservices, Kafka, OneBusAway API endpoint</p>
-        </div>
-      </div>
-      <!------------------------------------------------------------------------------------------>
-      </div>
-      </section>
-    <section class="card" id="contact-card">
-      <h3>Contact</h3>
-      <a href="mailto:dasonbaird25@gmail.com">dasonbaird25@gmail.com</a>
-    </section>
-  </article>
-  <script src="script.js"></script>
-</body>
-
+      const code = await response.text();
+      document.getElementById("code-block").textContent = code;
+      Prism.highlightAll();
+    }
+  </script>
 </html>
