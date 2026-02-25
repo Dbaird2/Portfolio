@@ -11,31 +11,12 @@
     </div>
     File directory and code snippets for files:
     <div class="big-card-footer">
-      <ul>
-        <li>
-          <a href="#" onclick="loadCode('Blok/main/Global.h')">Global.h</a>
-        </li>
-        <li>
-          <a href="#" onclick="loadCode('Blok/main/dbaird.cpp')">dbaird.cpp</a>
-        </li>
-        <li>
-          <a href="#" onclick="loadCode('Blok/main/dbairdheader.h')"
-            >dbairdheader.h</a
-          >
-        </li>
-        <li>
-          <a href="#" onclick="loadCode('Blok/main/blok.cpp')">blok.cpp</a>
-        </li>
-        <li>
-          <a href="#" onclick="loadCode('Blok/main/Makefile')">Makefile</a>
-        </li>
-        <li>
-          <a href="#" onclick="loadCode('Blok/main/README.md')">README.md</a>
-        </li>
+      <ul class="blok-sub-list">
       </ul>
     </div>
   </div>
 </article>
+
 <article id="ims-big-card" class="big-cards">
   <div class="big-card">
     <div class="big-card-header">Inventory Management System</div>
@@ -50,8 +31,8 @@
     </div>
     File directory and code snippets for files:
     <div class="big-card-footer">
-      <ul>
-        <li>
+      <ul class="seniorproject-sub-list">
+        <!-- <li>
           <a
             class="folder"
             href="#"
@@ -365,10 +346,10 @@
                     href="#"
                     onclick="
                       loadCode(
-                        'seniorproject/main/asset-manager/manage/manage-profile-ajax.php',
+                        'seniorproject/main/asset-manager/manage/manage-profile-ajax.js',
                       )
                     "
-                    >manage-profile-ajax.php</a
+                    >manage-profile-ajax.js</a
                   >
                 </li>
                 <li>
@@ -447,6 +428,47 @@
         </li>
         <li>
           <a
+            class="folder"
+            href="#"
+            onclick="toggleSubList(this)"
+            id="audit-sub-list"
+            ><i class="fa-thin fa-angle-down"></i>audit</a
+          >
+          <ul class="audit-sub-list sub-list">
+            <li>
+              <a
+                class="folder"
+                href="#"
+                onclick="toggleSubList(this)"
+                id="audit-history-sub-list"
+                ><i class="fa-thin fa-angle-down"></i>audit-history</a
+              >
+              <ul class="audit-history-sub-list sub-list"></ul>
+            </li>
+            <li>
+              <a
+                class="folder"
+                href="#"
+                onclick="toggleSubList(this)"
+                id="complete-sub-list"
+                ><i class="fa-thin fa-angle-down"></i>complete</a
+              >
+              <ul class="complete-sub-list sub-list"></ul>
+            </li>
+            <li>
+              <a
+                class="file"
+                href="#"
+                onclick="
+                  loadCode('seniorproject/main/asset-manager/crud/add-note.php')
+                "
+                >add-note.php</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
             class="file"
             href="#"
             onclick="loadCode('seniorproject/main/Dockerfile')"
@@ -460,7 +482,119 @@
             onclick="loadCode('seniorproject/main/home.php')"
             >home.php</a
           >
-        </li>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article id="stock-predictor-big-card" class="big-cards">
+  <div class="big-card">
+    <div class="big-card-header">Stock Predictor</div>
+    <div class="big-card-body">
+      <p>
+        The Stock Predictor is a machine learning application
+      </p>
+        This program is to predict wether to hold, buy, or sell a stock based on the predicted price movement. The model is trained on historical stock data and uses various technical indicators to make predictions. The application also includes a FastAPI backend for serving predictions and a React frontend for user interaction. 
+      </p>
+    </div>
+    File directory and code snippets for files:
+    <div class="big-card-footer">
+      <ul class="Stock-Predictor-sub-list">
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article id="arrest-predictor-big-card" class="big-cards">
+  <div class="big-card">
+    <div class="big-card-header">Arrest Predictor</div>
+    <div class="big-card-body">
+      <p>
+        The Arrest Predictor is a machine learning application
+      </p>
+        This program is to predict an arrest based on the predicted likelihood of an arrest. The model is trained on historical arrest data from LA county records and uses various demographic and geographic indicators to make predictions. 
+      </p>
+    </div>
+    File directory and code snippets for files:
+    <div class="big-card-footer">
+      <ul class="ML-group-project-sub-list">
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article id="javascript-games-big-card" class="big-cards">
+  <div class="big-card">
+    <div class="big-card-header">JavaScript Games</div>
+    <div class="big-card-body">
+      <p>
+        The JavaScript Games project is a collection of interactive games built with HTML, CSS, JavaScript, WebSockets.
+      </p>
+        The games include a multipler Chess game, and connect four game currently. The games are designed to be played in real-time with other players over the internet using WebSockets for communication. The frontend is built with pure JavaScript and HTML/CSS, while the backend is built with Node.js to handle game logic and WebSocket connections. The project aims to provide a fun and engaging gaming experience while also demonstrating the capabilities of web technologies for real-time multiplayer games.
+      </p>
+    </div>
+    File directory and code snippets for files:
+    <div class="big-card-footer">
+      <ul class="games-sub-list">
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article id="audit-mobile-app-big-card" class="big-cards">
+  <div class="big-card">
+    <div class="big-card-header">Audit Mobile App</div>
+    <div class="big-card-body">
+      <p>
+        The Audit Mobile App is a mobile application built with React Native and SQLite.
+
+      </p>
+        The app allows users to perform audits on various assets and stores the audit data locally using SQLite. The frontend is built purely from react native, while having the website server doing all of the heavy lifting for data management and processing. The app is designed to be user-friendly and efficient, allowing users to quickly and easily perform audits on the go. The project aims to provide a convenient solution for managing audits and improving productivity for Califirnia state university bakersfield's custodians.
+      </p>
+    </div>
+    File directory and code snippets for files:
+    <div class="big-card-footer">
+      <ul class="senior-mobile-sub-list">
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article id="banking-management-system-big-card" class="big-cards">
+  <div class="big-card">
+    <div class="big-card-header">Banking Management System</div>
+    <div class="big-card-body">
+      <p>
+        The Banking Management System is a web application built with React and Node.js.
+
+      </p>
+        Banking Management System or BAMS for short is a web application that allows users to manage their bank accounts by performing money transfers, withdrawals, and deposits. The frontend is HTML, CSS, and JavaScript, while the backend is purely built with PHP and MariaDB. The application is designed to be secure and user-friendly, providing a convenient way for users to manage their finances online. The project aims to demonstrate the capabilities of web technologies for building robust and scalable financial applications.
+    </p>
+    </div>
+    File directory and code snippets for files:
+    <div class="big-card-footer">
+      <ul class="database-group-project-sub-list">
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article id="mariadb-research-big-card" class="big-cards">
+  <div class="big-card">
+    <div class="big-card-header">MariaDB Research Project</div>
+    <div class="big-card-body">
+      <p>
+        The MariaDB Research Project is a research project focused on exploring the capabilities and performance of MariaDB, an open-source relational database management system.
+
+      </p>
+      <p>
+        The project involved performance costs versus database size. The research looked into normalization levels and how they affect performance as the database size increases. The project also explored various indexing strategies and their impact on query performance. The research aimed to provide insights into optimizing database performance and scalability using MariaDB, particularly in the context of large datasets and complex queries. Table schema types were also explored, along with the use of compression and partitioning to further optimize performance. The project contributes to the understanding of how to effectively utilize MariaDB for high-performance database applications.
+    </p>
+    </div>
+    File directory and code snippets for files:
+    <div class="big-card-footer">
+      <ul class="MariaDB-Research-Report-sub-list">
       </ul>
     </div>
   </div>

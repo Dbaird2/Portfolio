@@ -91,10 +91,11 @@
               <div class="small-card">
                 <div class="small-card-body">
                   <p>
-                    Hello! My name is Dason Baird and I am a software engineer<br>
-                    based in the United States. I have a passion for building<br>
-                    software that solves real-world problems and I am always<br>
-                    looking for new opportunities to learn and grow as a<br>
+                    Hello! My name is Dason Baird and I am a software
+                    engineer<br />
+                    based in the United States. I have a passion for building<br />
+                    software that solves real-world problems and I am always<br />
+                    looking for new opportunities to learn and grow as a<br />
                     developer.
                   </p>
                 </div>
@@ -111,14 +112,6 @@
     <script src="script.js"></script>
   </body>
   <script>
-    async function loadCode(file) {
-      const response = await fetch(
-        "https://raw.githubusercontent.com/Dbaird2/" + file,
-      );
-
-      const code = await response.text();
-      document.getElementById("code-block").textContent = code;
-      Prism.highlightAll();
-    }
+    
   </script>
 </html>

@@ -3,6 +3,13 @@ body {
   color: gray;
   height: 100vh;
   margin: 0;
+  /*
+  Source - https://stackoverflow.com/a/32660790
+  Posted by inorganik, modified by community. See post 'Timeline' for change history
+  Retrieved 2026-02-25, License - CC BY-SA 3.0
+  */
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
 }
 
 a {
@@ -80,8 +87,10 @@ article {
 }
 
 .small-sub-cards {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto; /* Explicitly defined columns */
+  grid-auto-columns: 150px;
+    gap: 5px;
 
 }
 
@@ -94,7 +103,6 @@ article {
 .small-card {
   color: black;
   background: linear-gradient(90deg, #CC5500, #CC5500);
-  width: fit-content;
   border-radius: 10px;
   padding: 20px;
   
@@ -154,7 +162,7 @@ li {
   width: 20%;
   padding: 5px;
 }
-.sub-list,
+
 .sub-list {
   display: none;
   background: rgb(252, 179, 131);
@@ -170,4 +178,30 @@ li {
 
 .file {
   color: black;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    height: fit-content;
+    border-right: none;
+    border-bottom: 2px solid gray;
+  }
+  .articles {
+    flex-direction: column;
+  }
+  .big-card-footer {
+    width: fit-content;
+  }
+  .sub-list {
+    width: fit-content;
+  }
+  .small-sub-cards {
+    display: grid;
+    grid-template-columns: auto; /* Explicitly defined columns */
+    grid-auto-columns: 150px;
+    gap: 3px;
+  }
 }
