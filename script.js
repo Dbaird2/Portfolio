@@ -84,7 +84,7 @@ async function createDirectoryStructure(repo) {
             href="#"
             onclick="toggleSubList(this)"
             id="${id}"
-            ><i class="fa-thin fa-angle-down"></i>${path_parts[path_parts.length - 1]}</a
+            >${path_parts[path_parts.length - 1]}</a
           >
           <ul class="${id} sub-list"></ul></li>`,
         );
@@ -98,7 +98,7 @@ async function createDirectoryStructure(repo) {
             href="#"
             onclick="toggleSubList(this)"
             id="${id}"
-            ><i class="fa-thin fa-angle-down"></i>${path_parts[path_parts.length - 1]}</a
+            >${path_parts[path_parts.length - 1]}</a
           >
           <ul class="${id} sub-list"></ul></li>`,
         );
@@ -150,6 +150,8 @@ small_card_files = [
   "small-proj-cards.html",
   "small-edu-cards.html",
   "small-exp-cards.html",
+  "small-contact-card.html",
+  "small-future-cards.html",
   "big-proj-cards.html",
 ];
 small_card_files.forEach((file) => loadCard(file));
@@ -198,9 +200,10 @@ function hideAllCards() {
   });
 }
 
-function showCard(cardId) {
+function showCard(card_id) {
   hideAllCards();
-  const card = document.getElementById(cardId);
+  console.log(card_id)
+  const card = document.getElementById(card_id);
   if (card) {
     card.classList.add("active");
     console.log(card);

@@ -1,5 +1,10 @@
 body {
-  background: linear-gradient(90deg,rgb(1, 21, 29) 0%, rgb(2, 7, 32) 50%, rgba(3, 30, 69, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(1, 21, 29) 0%,
+    rgb(2, 7, 32) 50%,
+    rgba(3, 30, 69, 1) 100%
+  );
   color: gray;
   height: 100vh;
   margin: 0;
@@ -9,7 +14,20 @@ body {
   Retrieved 2026-02-25, License - CC BY-SA 3.0
   */
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
+:root {
+  --ember: #cc5500;
+  --ember-light: #e8722a;
+  --ember-dim: rgba(204, 85, 0, 0.15);
+  --ember-glow: rgba(204, 85, 0, 0.35);
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-hover: rgba(255, 255, 255, 0.06);
+  --border: rgba(204, 85, 0, 0.25);
+  --border-hover: rgba(204, 85, 0, 0.6);
+  --text-primary: #f0e8df;
+  --text-muted: #7a8fa6;
+  --radius: 14px;
 }
 
 a {
@@ -53,6 +71,9 @@ aside > a {
 aside > a.active {
   border-left: 2px solid gray;
   padding-left: 8px;
+  padding: 20px;
+  animation-name: rotateButton;
+  animation-duration: 1s;
 }
 
 main {
@@ -68,45 +89,70 @@ article {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
   gap: 20px;
 }
 
-@keyframes myAnimation {
-  0%   {background:red;}
-  25%  {background:yellow;}
-  50%  {background:blue;}
-  75%  {background:green;}
-  100% {background:red;}
+.small-card:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+  box-shadow:
+    0 0 28px var(--ember-glow),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px) scale(1.01);
+  cursor: pointer;
 }
 
-.small-card:hover {
-  background:  #e66000;
-  cursor: pointer;
-  scale: 1.02;
+.small-card:hover::before {
+  opacity: 1;
 }
 
 .small-sub-cards {
   display: grid;
   grid-template-columns: auto auto auto; /* Explicitly defined columns */
   grid-auto-columns: 150px;
-    gap: 5px;
-
+  gap: 5px;
 }
 
 .small-cards.active {
   visibility: visible !important;
   opacity: 1 !important;
   transition: opacity 0.5s ease-in-out;
-} 
+  padding: 20px;
+  animation-name: rotateButton;
+  animation-duration: 1s;
+}
 
 .small-card {
-  color: black;
-  background: linear-gradient(90deg, #CC5500, #CC5500);
-  border-radius: 10px;
-  padding: 20px;
-  
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0;
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease;
+  animation: cardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
+.small-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ember), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
 .small-card-footer > a,
 .big-card-footer > ul > li > a {
   font-weight: 600;
@@ -114,7 +160,7 @@ article {
 }
 .big-card {
   color: black;
-  background: linear-gradient(90deg, #CC5500, #CC5500);
+  background: linear-gradient(90deg, #cc5500, #cc5500);
   width: fit-content;
   border-radius: 10px;
   padding: 20px;
@@ -123,15 +169,16 @@ article {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
 }
 .big-cards.active {
   opacity: 1;
   visibility: visible;
-
 }
 ul {
-  list-style: none;
+  list-style: none;                             
   padding-left: 0;
   margin: 5px;
 }
@@ -158,7 +205,7 @@ li {
 .big-card-footer {
   border: 2px solid gray;
   border-radius: 10px;
-  background:rgb(252, 179, 131);
+  background: rgb(252, 179, 131);
   width: 20%;
   padding: 5px;
 }
@@ -204,4 +251,208 @@ li {
     grid-auto-columns: 150px;
     gap: 3px;
   }
+}
+@keyframes myAnimation {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+@keyframes rotateButton {
+  from {
+    scale: 0.5;
+  }
+  to {
+  }
+}
+
+.small-card-body {
+  padding: 20px;
+}
+
+.small-card {
+  padding: 15px;
+  animation-name: rotateButton;
+  animation-duration: 1s;
+}
+
+@keyframes glowButtonPink {
+  from {
+    background-color: #ff00ff; /* Neon pink background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    /* The glow effect */
+    box-shadow:
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff,
+      0 0 40px #ff00ff;
+  }
+}
+@keyframes glowButtonBlue {
+  from {
+    background-color: lightblue; /* Neon pink background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    /* The glow effect */
+    box-shadow:
+      0 0 10px lightblue,
+      0 0 20px lightblue,
+      0 0 40px lightblue; /* Wider glow */
+  }
+}
+.linkedin-button {
+  animation-name: glowButtonBlue;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+.nav-button {
+  animation-name: glowButtonPink;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.two {
+  animation-delay: 0.5s;
+}
+.small-card-footer {
+  padding: 10px 20px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.small-card-footer a {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ember-light);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.small-card-footer a:hover {
+  color: #fff;
+}
+
+.big-card-footer ul li a:hover {
+  color: var(--ember-light);
+}
+
+.big-card-footer ul li a.folder {
+  color: var(--ember-light);
+}
+
+.big-card-footer ul li a.folder::before {
+  content: "📁";
+  font-size: 0.75rem;
+}
+.big-card-footer ul li a.file::before {
+  content: "📄";
+  font-size: 0.75rem;
+}
+.big-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  width: fit-content;
+  max-width: 760px;
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+  animation: cardIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* diagonal ember glow in corner */
+.big-card::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--ember-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.big-card-header {
+  font-family: "Syne", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* small ember pip before header */
+.big-card-header::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ember);
+  box-shadow: 0 0 10px var(--ember);
+  flex-shrink: 0;
+}
+
+.big-card-body {
+  margin-bottom: 20px;
+}
+
+.big-card-body p {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #8fa3b8;
+  max-width: 58ch;
+}
+
+/* "File directory and code snippets" label */
+.big-card > *:not(.big-card-header):not(.big-card-body):not(.big-card-footer) {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 10px;
+  opacity: 0.75;
+}
+
+.big-card-footer {
+  background: rgba(204, 85, 0, 0.07);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  width: fit-content;
+  min-width: 220px;
+}
+
+.big-card-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.big-card-footer ul li {
+  margin: 4px 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+}
+
+.big-card-footer ul li a {
+  color: #8fa3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
