@@ -1,0 +1,92 @@
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  max-width: 480px;
+  position: relative;
+  overflow: hidden;
+  animation: cardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.contact-card::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--ember-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-link:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-hover);
+  box-shadow: 0 0 20px var(--ember-glow);
+  transform: translateX(4px);
+}
+
+.contact-link-icon {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ember);
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--ember-dim);
+  font-family: "JetBrains Mono", monospace;
+}
+
+.contact-link-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-link-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ember);
+  opacity: 0.8;
+}
+
+.contact-link-value {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  transition: color 0.2s;
+}
+
+.contact-link:hover .contact-link-value {
+  color: var(--text-primary);
+}

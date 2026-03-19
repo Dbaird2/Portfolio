@@ -1,0 +1,72 @@
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateButton {
+  from { scale: 0.5; }
+  to {}
+}
+
+@keyframes glowButtonPink {
+  from {
+    background-color: #ff00ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff00ff, 0 0 10px #ff00ff, 0 0 10px #ff00ff;
+  }
+}
+
+@keyframes glowButtonBlue {
+  from {
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px lightblue, 0 0 10px lightblue, 0 0 10px lightblue;
+  }
+}
+
+@keyframes glowButtonEmber {
+  from {
+    background-color: var(--ember);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 30px var(--ember-light), 0 0 10px var(--ember-light), 0 0 40px var(--ember-light);
+  }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px var(--text-neon-green), 0 0 10px var(--text-neon-green), 0 0 20px var(--text-neon-green), 0 0 40px var(--text-neon-green), 0 0 80px var(--text-neon-green);
+    }
+    100% {
+        text-shadow: 0 0 10px var(--ember-light), 0 0 20px var(--ember-light), 0 0 40px var(--ember-light), 0 0 80px var(--ember-light), 0 0 160px var(--ember-light);
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

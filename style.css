@@ -140,7 +140,7 @@ article {
     box-shadow 0.25s ease,
     transform 0.25s ease,
     background 0.25s ease;
-  animation: cardIn 2s cubic-bezier(0.22, 1, 0.36, 1) forwards; 
+  animation: cardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; 
 
 }
 

@@ -1,0 +1,58 @@
+.linkedin-button {
+  height: fit-content;
+  animation-name: glowButtonBlue;
+  animation-duration: 3.1s;
+  animation-iteration-count: infinite;
+}
+
+.nav-button {
+  height: fit-content;
+  animation-name: glowButtonPink;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.resume-download {
+  height: fit-content;
+  animation-name: glowButtonEmber;
+  animation-duration: 3.2s;
+  animation-iteration-count: infinite;
+    margin-left: 20px;
+  margin-top: 7px;
+}
+
+.header-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px var(--ember-light), 0 0 10px var(--ember-light), 0 0 20px var(--ember-light), 0 0 40px var(--ember-light), 0 0 80px var(--ember-light);
+  animation: glow 1.5s infinite alternate;
+}
+
+.split-text-container {
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    overflow: hidden;
+    gap: 4px;
+}
+
+.text-part {
+    display: inline-block;
+    position: relative;
+    transform: translateX(0);
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.text-part.left {
+    transform: translateX(-200%);
+    animation-name: slide-in-left;
+}
+
+.text-part.right {
+    transform: translateX(200%);
+    animation-name: slide-in-right;
+}

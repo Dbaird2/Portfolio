@@ -3,32 +3,37 @@
   <head>
     <link
       href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <link rel="icon" type="image/x-icon" href="portfolio.png" />
 
     <title>Portfolio</title>
-    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/cards.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+    <link rel="stylesheet" href="styles/nav-buttons.css" />
+    <link rel="stylesheet" href="styles/contact-card.css" />
   </head>
 
   <body>
     <nav class="top">
-      <span class="name">Dason Baird</span>
+      <div class="split-text-container">
+        <span class="text-part left">Dason</span>
+        <span class="text-part right">Baird</span>
+      </div>
       <div class="nav-button">
         <a href="https://github.com/Dbaird2" rel="noopener" target="_blank">
           <i
             class="fa fa-github-square"
-            style="font-size: 24px; color: gray"
-          ></i
+            style="font-size: 24px; color: gray"></i
         ></a>
       </div>
       <div class="linkedin-button">
@@ -38,17 +43,15 @@
           target="_blank"
           ><i
             class="fa fa-linkedin-square"
-            style="font-size: 24px; color: gray"
-          ></i
+            style="font-size: 24px; color: gray"></i
         ></a>
       </div>
-      <div>
+      <div class="resume-download">
         <a href="DasonB_ResumeIT.docx" target="_blank"
           ><i
             class="fa fa-download"
             style="font-size: 12px; color: gray"
-            aria-hidden="true"
-          ></i>
+            aria-hidden="true"></i>
           Resume</a
         >
       </div>
@@ -102,22 +105,23 @@
       <main class="articles">
         <div class="flex">
           <article id="intro-small-card" class="small-cards">
-            Introduction
-            <div class="small-sub-cards">
-              <div class="small-card">
-                <div class="small-card-body">
-                  <p>
-                    Hello! My name is Dason Baird<br />
-                    based in the United States. I have a passion for building<br />
-                    software that solves real-world problems and I am always<br />
-                    looking for new opportunities to learn and grow as a<br />
-                    developer.
-                  </p>
-                </div>
+            <div class="intro-card">
+              <div class="intro-greeting">Hello, I'm</div>
+              <div class="intro-name">Dason Baird</div>
+              <div class="intro-tagline">Aspiring Full Stack Developer</div>
+              <p class="intro-bio">
+                Based in the United States. I have a passion for building
+                software that solves real-world problems and I'm always looking
+                for new opportunities to learn and grow as a developer.
+              </p>
+              <div class="intro-tags">
+                <span class="intro-tag">Python</span>
+                <span class="intro-tag">FastAPI</span>
+                <span class="intro-tag">React</span>
+                <span class="intro-tag">PostgreSQL</span>
               </div>
             </div>
           </article>
-
           <div class="code-snippet">
             <pre><code id="code-block" class="language-javascript"></code></pre>
           </div>

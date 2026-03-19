@@ -1,0 +1,71 @@
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  color: gray;
+  border-bottom: 2px solid gray;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 20px;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+  height: 20rem;
+}
+
+.aside-header {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--ember-light);
+}
+
+aside > a {
+  padding-left: 10px;
+}
+
+aside > a.active {
+    border-left: 2px solid gray;
+    padding-left: 8px;
+    padding: 20px;
+    color: var(--ember-light);
+    animation-name: rotateButton;
+}
+
+main {
+  padding: 20px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.articles {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    height: fit-content;
+    border-right: none;
+    border-bottom: 2px solid gray;
+  }
+  .articles {
+    flex-direction: column;
+  }
+}

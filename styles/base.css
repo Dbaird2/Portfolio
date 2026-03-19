@@ -1,0 +1,42 @@
+:root {
+  --ember: #cc5500;
+  --ember-light: #e8722a;
+  --ember-dim: rgba(204, 85, 0, 0.15);
+  --ember-glow: rgba(204, 85, 0, 0.35);
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-hover: rgba(255, 255, 255, 0.06);
+  --border: rgba(204, 85, 0, 0.25);
+  --border-hover: rgba(204, 85, 0, 0.6);
+  --text-primary: #f0e8df;
+  --text-muted: #7a8fa6;
+  --radius: 14px;
+  --text-neon-green: #2cff05;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgb(1, 21, 29) 0%,
+    rgb(2, 7, 32) 50%,
+    rgba(3, 30, 69, 1) 100%
+  );
+  color: gray;
+  height: 100vh;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 5px;
+}
+
+li {
+  margin: 5px 0;
+}
