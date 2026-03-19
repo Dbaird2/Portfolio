@@ -60,8 +60,9 @@ aside {
   flex-direction: column;
   gap: 20px;
   padding: 20px;
-  height: calc(100% + 100vh);
   border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+  height: 20rem;
 }
 
 aside > a {
@@ -89,9 +90,9 @@ article {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  transition:
+  /* transition:
     opacity 0.5s ease-in-out,
-    visibility 0.5s ease-in-out;
+    visibility 0.5s ease-in-out; */
   gap: 20px;
 }
 
@@ -106,7 +107,7 @@ article {
 }
 
 .small-card:hover::before {
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .small-sub-cards {
@@ -121,8 +122,8 @@ article {
   opacity: 1 !important;
   transition: opacity 0.5s ease-in-out;
   padding: 20px;
-  animation-name: rotateButton;
-  animation-duration: 1s;
+  /* animation-name: rotateButton;
+  animation-duration: 1s; */
 }
 
 .small-card {
@@ -133,12 +134,14 @@ article {
   color: var(--text-primary);
   position: relative;
   overflow: hidden;
+  opacity: 0;
   transition:
     border-color 0.25s ease,
     box-shadow 0.25s ease,
     transform 0.25s ease,
     background 0.25s ease;
-  animation: cardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: cardIn 2s cubic-bezier(0.22, 1, 0.36, 1) forwards; 
+
 }
 
 .small-card::before {
@@ -275,8 +278,8 @@ li {
 
 .small-card {
   padding: 15px;
-  animation-name: rotateButton;
-  animation-duration: 1s;
+  /* animation-name: rotateButton;
+  animation-duration: 1s; */
 }
 
 @keyframes glowButtonPink {
@@ -455,4 +458,25 @@ li {
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+/* stagger each card */
+.small-card:nth-child(1) { animation-delay: 0s; }
+.small-card:nth-child(2) { animation-delay: 0.5s; }
+.small-card:nth-child(3) { animation-delay: 1s; }
+.small-card:nth-child(4) { animation-delay: 1.5s; }
+.small-card:nth-child(5) { animation-delay: 2s; }
+.small-card:nth-child(6) { animation-delay: 2.5s; }
+.small-card:nth-child(7) { animation-delay: 3s; }
+.small-card:nth-child(8) { animation-delay: 3.5s; }
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

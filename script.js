@@ -202,7 +202,13 @@ function hideAllCards() {
 
 function showCard(card_id) {
   hideAllCards();
-  console.log(card_id)
+  console.log(card_id);
+  const small_cards = document.querySelectorAll(".small-card");
+  small_cards.forEach((small_card) => {
+    small_card.style.animation = "none";
+    void small_card.offsetWidth; // force reflow
+    small_card.style.animation = "";
+  });
   const card = document.getElementById(card_id);
   if (card) {
     card.classList.add("active");
@@ -251,4 +257,16 @@ function toggleSubList(event) {
         big_card_size.offsetTop + big_card_size.offsetHeight + 5 + "px";
     }
   }
+}
+
+function showSection(id) {
+  const section = document.getElementById(id);
+  section.classList.add("active");
+
+  // reset animation on each card
+  section.querySelectorAll(".small-card").forEach((card) => {
+    card.style.animation = "none";
+    void card.offsetWidth; // force reflow
+    card.style.animation = "";
+  });
 }
