@@ -25,3 +25,13 @@
     backdrop-filter: blur(5px)!important;
     z-index: 100;
 }
+
+.modal-header {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    text-align: right;
+}
