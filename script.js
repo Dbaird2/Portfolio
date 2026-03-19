@@ -1,7 +1,7 @@
 // const sections = document.querySelectorAll("section");
 // const navLinks = document.querySelectorAll(".sidenav a");
 
-// console.log(sections);
+// // console.log(sections);
 // const observer = new IntersectionObserver(
 //   (entries) => {
 //     entries.forEach((entry) => {
@@ -15,7 +15,7 @@
 //       if (entry.isIntersecting) {
 //         link.classList.add("active");
 //         card.classList.add("active-card");
-//         console.log(card)
+//         // console.log(card)
 //       } else {
 //         link.classList.remove("active");
 //         card.classList.remove("active-card");
@@ -36,6 +36,13 @@ async function loadCode(file) {
   const code = await response.text();
   document.getElementById("code-block").textContent = code;
   Prism.highlightAll();
+  const big_card_size = document.querySelector(".big-cards.active");
+  let code_block = document.getElementById("code-block");
+
+  if (code_block) {
+    document.querySelector(".code-snippet").style.display = "block";
+    document.querySelector(".modal-blur").style.display = "block";
+  }
 }
 async function loadRepo(repo) {
   const response = await fetch(
@@ -45,14 +52,14 @@ async function loadRepo(repo) {
   );
 
   const data = await response.json();
-  console.log(data.tree);
+  // console.log(data.tree);
 
   return data;
 }
 async function createDirectoryStructure(repo) {
   const data = await loadRepo(repo);
   const tree = data.tree;
-
+  console.log('running createDirectoryStructure for repo:', repo);
   tree.forEach((item) => {
     const path_parts = item.path.split("/");
     if (path_parts[0] === "vendor") {
@@ -66,7 +73,7 @@ async function createDirectoryStructure(repo) {
       let prev_id =
         path_parts.slice(0, path_parts.length - 1).join("-") + "-sub-list";
       /*
-      console.log(
+      // console.log(
         document.querySelector("." + repo + "-sub-list"),
         id,
         prev_id,
@@ -76,7 +83,7 @@ async function createDirectoryStructure(repo) {
       */
       if (path_parts.length === 1) {
         // Top Level
-
+        
         document.querySelector("." + repo + "-sub-list").insertAdjacentHTML(
           "beforeend",
           `<li><a
@@ -89,7 +96,7 @@ async function createDirectoryStructure(repo) {
           <ul class="${id} sub-list"></ul></li>`,
         );
       } else {
-        // console.log("folder", path_parts, prev_id, id);
+        // // console.log("folder", path_parts, prev_id, id);
 
         document.querySelector("." + prev_id).insertAdjacentHTML(
           "beforeend",
@@ -114,7 +121,7 @@ async function createDirectoryStructure(repo) {
           path_parts.slice(0, path_parts.length - 1).join("-") +
           "-sub-list";
       }
-      /* console.log(
+      /* // console.log(
         document.querySelector("." + repo + "-sub-list"),
         id,
         mode,
@@ -136,14 +143,14 @@ async function createDirectoryStructure(repo) {
   });
 }
 function loadCard(file) {
-  console.log("Loading card:", file);
+  // console.log("Loading card:", file);
   fetch(file)
     .then((response) => response.text())
     .then((html) => {
       document.querySelector(".articles").innerHTML += html;
     })
     .catch((error) => {
-      console.warn("Error loading card:", error);
+      // console.warn("Error loading card:", error);
     });
 }
 small_card_files = [
@@ -173,7 +180,7 @@ side_clicks.forEach((click) => {
   click.addEventListener("click", (e) => {
     e.preventDefault();
     const card_id = click.id + "-small-card";
-    console.log(card_id);
+    // console.log(card_id);
     showCard(card_id);
   });
 });
@@ -202,7 +209,7 @@ function hideAllCards() {
 
 function showCard(card_id) {
   hideAllCards();
-  console.log(card_id);
+  // console.log(card_id);
   const small_cards = document.querySelectorAll(".small-card");
   small_cards.forEach((small_card) => {
     small_card.style.animation = "none";
@@ -212,12 +219,12 @@ function showCard(card_id) {
   const card = document.getElementById(card_id);
   if (card) {
     card.classList.add("active");
-    console.log(card);
+    // console.log(card);
   }
 }
 
 function sidebarActive(clicked) {
-  console.log(clicked);
+  // console.log(clicked);
   const side_clicks = document.querySelectorAll(".contents");
   side_clicks.forEach((click) => {
     click.classList.remove("active");
@@ -231,31 +238,30 @@ function showBigCard(card_id) {
   if (big_card) {
     big_card.classList.add("active");
   }
-  const big_card_size = document.querySelector(".big-cards.active");
-  let code_block = document.getElementById("code-block");
 
-  if (code_block) {
-    document.querySelector(".code-snippet").style.display = "block";
-    code_block.style.top =
-      big_card_size.offsetTop + big_card_size.offsetHeight + 5 + "px";
-  }
+  // const big_card_size = document.querySelector(".big-cards.active");
+  // let code_block = document.getElementById("code-block");
+
+  // if (code_block) {
+  //   document.querySelector(".code-snippet").style.display = "block";
+  //   code_block.style.top =
+  //     big_card_size.offsetTop + big_card_size.offsetHeight + 5 + "px";
+  // }
 }
 
 function toggleSubList(event) {
-  console.log("Toggling sublist for:", event.id);
+  // console.log("Toggling sublist for:", event.id);
   const subList = document.querySelector(`.${event.id}`);
-  console.log("Sublist element:", subList);
+  // console.log("Sublist element:", subList);
+  subList.style.display = subList.style.display === "block" ? "none" : "block";
   if (subList) {
-    subList.style.display =
-      subList.style.display === "block" ? "none" : "block";
-    const big_card_size = document.querySelector(".big-cards.active");
-    let code_block = document.getElementById("code-block");
-
-    if (code_block) {
-      document.querySelector(".code-snippet").style.display = "block";
-      code_block.style.top =
-        big_card_size.offsetTop + big_card_size.offsetHeight + 5 + "px";
-    }
+    // const big_card_size = document.querySelector(".big-cards.active");
+    // let code_block = document.getElementById("code-block");
+    // if (code_block) {
+    //   document.querySelector(".code-snippet").style.display = "block";
+    //   code_block.style.top =
+    //     big_card_size.offsetTop + big_card_size.offsetHeight + 5 + "px";
+    // }
   }
 }
 
@@ -269,4 +275,15 @@ function showSection(id) {
     void card.offsetWidth; // force reflow
     card.style.animation = "";
   });
+}
+
+function resetModal() {
+  const code_block = document.getElementById("code-block");
+  if (code_block) {
+    document.querySelector(".code-snippet").style.display = "none";
+    document.getElementById("code-block").textContent = "";
+    document.querySelector(".modal-blur").style.display = "none";
+
+    code_block.textContent = "";
+  }
 }

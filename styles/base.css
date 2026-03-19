@@ -13,13 +13,20 @@
   --text-neon-green: #2cff05;
 }
 
+html {
+    background: linear-gradient(
+      90deg,
+      rgb(1, 21, 29) 0%,
+      rgb(2, 7, 32) 50%,
+      rgba(3, 30, 69, 1) 100%
+    );
+    margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 body {
-  background: linear-gradient(
-    90deg,
-    rgb(1, 21, 29) 0%,
-    rgb(2, 7, 32) 50%,
-    rgba(3, 30, 69, 1) 100%
-  );
   color: gray;
   height: 100vh;
   margin: 0;

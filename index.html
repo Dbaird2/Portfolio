@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="styles/animations.css" />
     <link rel="stylesheet" href="styles/nav-buttons.css" />
     <link rel="stylesheet" href="styles/contact-card.css" />
+    <link rel="stylesheet" href="styles/modal.css" />
   </head>
 
   <body>
@@ -122,8 +123,14 @@
               </div>
             </div>
           </article>
-          <div class="code-snippet">
-            <pre><code id="code-block" class="language-javascript"></code></pre>
+        </div>
+        <div class="modal-blur"></div>
+        <div class="code-snippet">
+          <div class="modal">
+            <div class="modal-header" onclick="resetModal()">X</div>
+            <div class="modal-body">
+              <pre><code id="code-block" class="language-javascript"></code></pre>
+            </div>
           </div>
         </div>
       </main>

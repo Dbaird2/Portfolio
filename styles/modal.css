@@ -1,0 +1,27 @@
+.code-snippet {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+    overflow-x: auto;
+    z-index: 1000;
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--ember-glow), 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.modal-blur {
+    display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    backdrop-filter: blur(5px)!important;
+    z-index: 100;
+}
