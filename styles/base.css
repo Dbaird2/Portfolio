@@ -14,16 +14,23 @@
 }
 
 html {
-    background: linear-gradient(
+  /* background: linear-gradient(
       90deg,
       rgb(1, 21, 29) 0%,
       rgb(2, 7, 32) 50%,
       rgba(3, 30, 69, 1) 100%
-    );
-    margin: 0;
-    width: 100vw;
-    overflow-x: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    ); */
+  background: #2a7b9b;
+  background: linear-gradient(
+    125deg,
+    rgb(3, 65, 90) 0%,
+    rgba(6, 11, 51, 1) 51%,
+    rgb(56, 24, 0) 100%
+  );
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {

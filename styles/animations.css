@@ -18,7 +18,7 @@
   from {
     background-color: #ff00ff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 10px #ff00ff, 0 0 10px #ff00ff, 0 0 10px #ff00ff;
   }
@@ -28,7 +28,7 @@
   from {
     background-color: lightblue;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 10px lightblue, 0 0 10px lightblue, 0 0 10px lightblue;
   }
@@ -40,7 +40,7 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 0 30px var(--ember-light), 0 0 10px var(--ember-light), 0 0 40px var(--ember-light);
+    box-shadow: 0 0 10px var(--ember-light), 0 0 10px var(--ember-light), 0 0 10px var(--ember-light);
   }
 }
 
@@ -55,7 +55,7 @@
 
 @keyframes slide-in-left {
     0% {
-        transform: translateX(-200%);
+        transform: translateX(-100%);
     }
     100% {
         transform: translateX(0);
@@ -64,9 +64,24 @@
 
 @keyframes slide-in-right {
     0% {
-        transform: translateX(200%);
+        transform: translateX(100%);
     }
     100% {
         transform: translateX(0);
     }
+}
+
+@keyframes section-right-slide {
+    0% {
+        transform: translateX(30%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes cycleBorderColor {
+  0% { border-bottom: 1px solid var(--ember-glow); }
+  50% { border-bottom: 1px solid var(--ember) }
+  100% { border-bottom: 1px solid var(--ember-glow)}
 }
