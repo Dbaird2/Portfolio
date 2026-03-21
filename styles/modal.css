@@ -15,6 +15,9 @@
   box-shadow:
     0 0 20px var(--ember-glow),
     0 4px 16px rgba(0, 0, 0, 0.4);
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .modal-blur {
