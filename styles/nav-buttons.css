@@ -54,19 +54,9 @@ nav.top {
     color 0.2s ease,
     background 0.2s ease,
     border-color 0.2s ease;
-    animation-name: cardIn;
-  animation-duration: 1s;
-}
-
-/* .nav-github {
   animation-name: cardIn;
   animation-duration: 1s;
 }
-
-.nav-linkedin {
-  animation-name: cardIn;
-  animation-duration: 1s;
-} */
 
 .nav-icon-link i {
   font-size: 1rem;
@@ -78,14 +68,12 @@ nav.top {
   border-color: var(--border);
 }
 
-/* resume — slightly more prominent */
 .nav-resume {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 7px 14px;
   border-radius: 8px;
-  /* border: 1px solid var(--border); */
   background: var(--ember-dim);
   color: var(--ember-light);
   font-size: 0.82rem;
@@ -106,4 +94,13 @@ nav.top {
 
 .nav-resume i {
   font-size: 0.8rem;
+}
+
+@media (max-width: 1000px) {
+  .split-text-container,
+  .nav-resume,
+  .nav-icon-link,
+  .nav-links {
+    display: none;
+  }
 }

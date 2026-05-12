@@ -171,6 +171,10 @@
   opacity: 1;
   display: block;
   visibility: visible;
+  max-height: 85vh;
+  overflow: auto;
+  max-width: 100%;
+  
 }
 
 .big-card {

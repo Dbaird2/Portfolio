@@ -6,7 +6,13 @@ body {
     rgba(3, 30, 69, 1) 100%
   );
   color: gray;
-  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  max-width: 100%;
+  max-height: 10%;
   margin: 0;
   /*
   Source - https://stackoverflow.com/a/32660790
@@ -140,8 +146,7 @@ article {
     box-shadow 0.25s ease,
     transform 0.25s ease,
     background 0.25s ease;
-  animation: cardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; 
-
+  animation: cardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .small-card::before {
@@ -152,6 +157,8 @@ article {
   right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--ember), transparent);
+  background-repeat: no-repeat;
+
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -164,6 +171,8 @@ article {
 .big-card {
   color: black;
   background: linear-gradient(90deg, #cc5500, #cc5500);
+  background-repeat: no-repeat;
+
   width: fit-content;
   border-radius: 10px;
   padding: 20px;
@@ -181,7 +190,7 @@ article {
   visibility: visible;
 }
 ul {
-  list-style: none;                             
+  list-style: none;
   padding-left: 0;
   margin: 5px;
 }
@@ -381,6 +390,8 @@ li {
   width: 180px;
   height: 180px;
   background: radial-gradient(circle, var(--ember-glow) 0%, transparent 70%);
+  background-repeat: no-repeat;
+
   pointer-events: none;
 }
 
@@ -461,14 +472,30 @@ li {
 }
 
 /* stagger each card */
-.small-card:nth-child(1) { animation-delay: 0s; }
-.small-card:nth-child(2) { animation-delay: 0.5s; }
-.small-card:nth-child(3) { animation-delay: 1s; }
-.small-card:nth-child(4) { animation-delay: 1.5s; }
-.small-card:nth-child(5) { animation-delay: 2s; }
-.small-card:nth-child(6) { animation-delay: 2.5s; }
-.small-card:nth-child(7) { animation-delay: 3s; }
-.small-card:nth-child(8) { animation-delay: 3.5s; }
+.small-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.small-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.small-card:nth-child(3) {
+  animation-delay: 1s;
+}
+.small-card:nth-child(4) {
+  animation-delay: 1.5s;
+}
+.small-card:nth-child(5) {
+  animation-delay: 2s;
+}
+.small-card:nth-child(6) {
+  animation-delay: 2.5s;
+}
+.small-card:nth-child(7) {
+  animation-delay: 3s;
+}
+.small-card:nth-child(8) {
+  animation-delay: 3.5s;
+}
 
 @keyframes cardIn {
   from {
