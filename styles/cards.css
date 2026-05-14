@@ -3,6 +3,9 @@
   opacity: 0;
   visibility: hidden;
   position: absolute;
+  display: none;
+  max-height: 85vh;
+  overflow: auto;
   /* transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; */
   gap: 0px;
 }
@@ -11,6 +14,9 @@
   visibility: visible;
   opacity: 1;
   padding: 20px;
+  max-height: 85vh;
+  overflow: auto;
+  display: block;
   transition:
     opacity 0.5s ease-in-out,
     visibility 0.5s ease-in-out;
@@ -41,6 +47,8 @@
     transform 0.25s ease,
     background 0.25s ease;
   animation: cardIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  max-height: 80vh;
+  overflow: auto;
 }
 
 .small-card:nth-child(1) {
@@ -174,7 +182,6 @@
   max-height: 85vh;
   overflow: auto;
   max-width: 100%;
-  
 }
 
 .big-card {
