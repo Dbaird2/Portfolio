@@ -56,10 +56,11 @@ async function loadRepo(repo) {
 
   return data;
 }
+
 async function createDirectoryStructure(repo) {
   const data = await loadRepo(repo);
   const tree = data.tree;
-  console.log('running createDirectoryStructure for repo:', repo);
+  console.log("running createDirectoryStructure for repo:", repo, data);
   tree.forEach((item) => {
     const path_parts = item.path.split("/");
     if (path_parts[0] === "vendor") {
@@ -73,27 +74,27 @@ async function createDirectoryStructure(repo) {
       let prev_id =
         path_parts.slice(0, path_parts.length - 1).join("-") + "-sub-list";
       /*
-      // console.log(
-        document.querySelector("." + repo + "-sub-list"),
-        id,
-        prev_id,
-        mode,
-        path_parts,
-      );
-      */
+        // console.log(
+          document.querySelector("." + repo + "-sub-list"),
+          id,
+          prev_id,
+          mode,
+          path_parts,
+        );
+        */
       if (path_parts.length === 1) {
         // Top Level
-        
+
         document.querySelector("." + repo + "-sub-list").insertAdjacentHTML(
           "beforeend",
           `<li><a
-            class="folder"
-            href="#"
-            onclick="toggleSubList(this)"
-            id="${id}"
-            >${path_parts[path_parts.length - 1]}</a
-          >
-          <ul class="${id} sub-list"></ul></li>`,
+              class="folder"
+              href="#"
+              onclick="toggleSubList(this)"
+              id="${id}"
+              >${path_parts[path_parts.length - 1]}</a
+            >
+            <ul class="${id} sub-list"></ul></li>`,
         );
       } else {
         // // console.log("folder", path_parts, prev_id, id);
@@ -101,13 +102,13 @@ async function createDirectoryStructure(repo) {
         document.querySelector("." + prev_id).insertAdjacentHTML(
           "beforeend",
           `<li><a
-            class="folder"
-            href="#"
-            onclick="toggleSubList(this)"
-            id="${id}"
-            >${path_parts[path_parts.length - 1]}</a
-          >
-          <ul class="${id} sub-list"></ul></li>`,
+              class="folder"
+              href="#"
+              onclick="toggleSubList(this)"
+              id="${id}"
+              >${path_parts[path_parts.length - 1]}</a
+            >
+            <ul class="${id} sub-list"></ul></li>`,
         );
       }
     } else {
@@ -122,22 +123,22 @@ async function createDirectoryStructure(repo) {
           "-sub-list";
       }
       /* // console.log(
-        document.querySelector("." + repo + "-sub-list"),
-        id,
-        mode,
-        path_parts,
-      );
-      */
+          document.querySelector("." + repo + "-sub-list"),
+          id,
+          mode,
+          path_parts,
+        );
+        */
       document.querySelector(id).insertAdjacentHTML(
         "beforeend",
         `<li>
-              <a
-                class="file"
-                href="#"
-                onclick="loadCode('${repo}/main/${item.path}')"
-                >${item.path}</a
-              >
-            </li>`,
+                <a
+                  class="file"
+                  href="#"
+                  onclick="loadCode('${repo}/main/${item.path}')"
+                  >${item.path}</a
+                >
+              </li>`,
       );
     }
   });
@@ -173,6 +174,8 @@ createDirectoryStructure("games");
 createDirectoryStructure("senior-mobile");
 createDirectoryStructure("Database-Group-Project");
 createDirectoryStructure("MariaDB-Research-Report");
+createDirectoryStructure("Garmot-Web-Scraper");
+createDirectoryStructure("Label-Reader");
 
 const side_clicks = document.querySelectorAll(".contents");
 
@@ -238,30 +241,12 @@ function showBigCard(card_id) {
   if (big_card) {
     big_card.classList.add("active");
   }
-
-  // const big_card_size = document.querySelector(".big-cards.active");
-  // let code_block = document.getElementById("code-block");
-
-  // if (code_block) {
-  //   document.querySelector(".code-snippet").style.display = "block";
-  //   code_block.style.top =
-  //     big_card_size.offsetTop + big_card_size.offsetHeight + 5 + "px";
-  // }
 }
 
 function toggleSubList(event) {
-  // console.log("Toggling sublist for:", event.id);
   const subList = document.querySelector(`.${event.id}`);
-  // console.log("Sublist element:", subList);
   subList.style.display = subList.style.display === "block" ? "none" : "block";
   if (subList) {
-    // const big_card_size = document.querySelector(".big-cards.active");
-    // let code_block = document.getElementById("code-block");
-    // if (code_block) {
-    //   document.querySelector(".code-snippet").style.display = "block";
-    //   code_block.style.top =
-    //     big_card_size.offsetTop + big_card_size.offsetHeight + 5 + "px";
-    // }
   }
 }
 

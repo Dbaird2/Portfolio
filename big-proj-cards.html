@@ -599,3 +599,40 @@
     </div>
   </div>
 </article>
+
+Here are the two big cards:
+html<article id="garmoth-big-card" class="big-cards">
+  <div class="big-card">
+    <div class="big-card-header">Garmoth BDO Tracker</div>
+    <div class="big-card-body">
+      <p>
+        Garmoth is a full-stack web application for tracking Black Desert Online gear progression and market data. It pulls live game data and presents it in a clean, responsive interface built with React.
+      </p>
+      <p>
+        The backend is built with FastAPI and PostgreSQL, with Redis used for caching frequently requested data to reduce load and improve response times. The project involved designing a normalized database schema, building a REST API, and managing cache invalidation strategies to keep data fresh without unnecessary database hits.
+      </p>
+    </div>
+    File directory and code snippets for files:
+    <div class="big-card-footer">
+      <ul class="garmoth-sub-list"></ul>
+    </div>
+  </div>
+</article>
+
+<article id="label-reader-big-card" class="big-cards">
+  <div class="big-card">
+    <div class="big-card-header">Label Reader</div>
+    <div class="big-card-body">
+      <p>
+        Label Reader is a cross-platform mobile application that scans physical labels and extracts structured data in real-time using optical character recognition and computer vision.
+      </p>
+      <p>
+        Built with React Native and Expo for the frontend, the app sends captured images to a FastAPI backend where EasyOCR and OpenCV process and parse the label content. Results are pushed back to the client instantly via WebSockets, avoiding polling and keeping the UX responsive. Extracted data is persisted in PostgreSQL for history and reporting. The project involved coordinating an async image processing pipeline with real-time communication across mobile and server.
+      </p>
+    </div>
+    File directory and code snippets for files:
+    <div class="big-card-footer">
+      <ul class="label-reader-sub-list"></ul>
+    </div>
+  </div>
+</article>
