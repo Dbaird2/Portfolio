@@ -1,33 +1,3 @@
-// const sections = document.querySelectorAll("section");
-// const navLinks = document.querySelectorAll(".sidenav a");
-
-// // console.log(sections);
-// const observer = new IntersectionObserver(
-//   (entries) => {
-//     entries.forEach((entry) => {
-//       const link = document.querySelector(
-//         `.sidenav a[href="#${entry.target.id}"]`
-//       );
-//       const card = document.querySelector(
-//         `.all-info section[id="${entry.target.id}"]`
-//       );
-
-//       if (entry.isIntersecting) {
-//         link.classList.add("active");
-//         card.classList.add("active-card");
-//         // console.log(card)
-//       } else {
-//         link.classList.remove("active");
-//         card.classList.remove("active-card");
-//       }
-//     });
-//   },
-//   { threshold: 0.2 }
-// );
-
-// sections.forEach((section) => {
-//   observer.observe(section);
-// });
 async function loadCode(file) {
   const response = await fetch(
     "https://raw.githubusercontent.com/Dbaird2/" + file,
@@ -52,7 +22,6 @@ async function loadRepo(repo) {
   );
 
   const data = await response.json();
-  // console.log(data.tree);
 
   return data;
 }
@@ -64,7 +33,7 @@ async function createDirectoryStructure(repo) {
   tree.forEach((item) => {
     const path_parts = item.path.split("/");
     if (path_parts[0] === "vendor") {
-      return; // Skip the 'vendor' directory and its contents
+      return;
     }
     const mode = item.mode; // '100644' for files, '040000' for directories
 
@@ -73,15 +42,7 @@ async function createDirectoryStructure(repo) {
       let id = path_parts.slice(0, path_parts.length).join("-") + "-sub-list";
       let prev_id =
         path_parts.slice(0, path_parts.length - 1).join("-") + "-sub-list";
-      /*
-        // console.log(
-          document.querySelector("." + repo + "-sub-list"),
-          id,
-          prev_id,
-          mode,
-          path_parts,
-        );
-        */
+
       if (path_parts.length === 1) {
         // Top Level
 
@@ -97,8 +58,6 @@ async function createDirectoryStructure(repo) {
             <ul class="${id} sub-list"></ul></li>`,
         );
       } else {
-        // // console.log("folder", path_parts, prev_id, id);
-
         document.querySelector("." + prev_id).insertAdjacentHTML(
           "beforeend",
           `<li><a
@@ -122,13 +81,6 @@ async function createDirectoryStructure(repo) {
           path_parts.slice(0, path_parts.length - 1).join("-") +
           "-sub-list";
       }
-      /* // console.log(
-          document.querySelector("." + repo + "-sub-list"),
-          id,
-          mode,
-          path_parts,
-        );
-        */
       document.querySelector(id).insertAdjacentHTML(
         "beforeend",
         `<li>
@@ -144,14 +96,13 @@ async function createDirectoryStructure(repo) {
   });
 }
 function loadCard(file) {
-  // console.log("Loading card:", file);
   fetch(file)
     .then((response) => response.text())
     .then((html) => {
       document.querySelector(".articles").innerHTML += html;
     })
     .catch((error) => {
-      // console.warn("Error loading card:", error);
+      console.warn("Error loading card:", error);
     });
 }
 small_card_files = [
@@ -174,7 +125,7 @@ createDirectoryStructure("games");
 createDirectoryStructure("senior-mobile");
 createDirectoryStructure("Database-Group-Project");
 createDirectoryStructure("MariaDB-Research-Report");
-createDirectoryStructure("Garmot-Web-Scraper");
+createDirectoryStructure("Garmoth-Web-Scraper");
 createDirectoryStructure("Label-Reader");
 
 const side_clicks = document.querySelectorAll(".contents");
@@ -189,18 +140,19 @@ side_clicks.forEach((click) => {
 });
 
 function hideAllCards() {
+  hideCodeSnippet();
+  hideSmallCards();
+  hideBigCards();
+}
+
+function hideCodeSnippet() {
   let code_block = document.getElementById("code-block");
   if (code_block) {
     document.querySelector(".code-snippet").style.display = "none";
   }
+}
 
-  const articles = document.querySelectorAll(".small-cards");
-  articles.forEach((article) => {
-    let card = article.id;
-    if (card) {
-      document.getElementById(card).classList.remove("active");
-    }
-  });
+function hideBigCards() {
   const big_cards = document.querySelectorAll(".big-cards");
   big_cards.forEach((big_card) => {
     let card = big_card.id;
@@ -210,19 +162,27 @@ function hideAllCards() {
   });
 }
 
+function hideSmallCards() {
+  const articles = document.querySelectorAll(".small-cards");
+  articles.forEach((article) => {
+    let card = article.id;
+    if (card) {
+      document.getElementById(card).classList.remove("active");
+    }
+  });
+}
+
 function showCard(card_id) {
   hideAllCards();
-  // console.log(card_id);
   const small_cards = document.querySelectorAll(".small-card");
   small_cards.forEach((small_card) => {
     small_card.style.animation = "none";
-    void small_card.offsetWidth; // force reflow
+    void small_card.offsetWidth;
     small_card.style.animation = "";
   });
   const card = document.getElementById(card_id);
   if (card) {
     card.classList.add("active");
-    // console.log(card);
   }
 }
 
@@ -248,18 +208,6 @@ function toggleSubList(event) {
   subList.style.display = subList.style.display === "block" ? "none" : "block";
   if (subList) {
   }
-}
-
-function showSection(id) {
-  const section = document.getElementById(id);
-  section.classList.add("active");
-
-  // reset animation on each card
-  section.querySelectorAll(".small-card").forEach((card) => {
-    card.style.animation = "none";
-    void card.offsetWidth; // force reflow
-    card.style.animation = "";
-  });
 }
 
 function resetModal() {
